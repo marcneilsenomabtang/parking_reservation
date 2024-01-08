@@ -589,7 +589,9 @@
 
 
       
-// ...................................................................................................................
+//........................................... Script for Price.....................................................................
+
+
 
 
 
@@ -612,14 +614,14 @@ function setupButtonListeners(
     var confirmationMessage = document.getElementById(confirmationMessageId);
 
     button1.addEventListener('click', function () {
-        button1Clicked = !button1Clicked;
+        button1Clicked = true;
         button2Clicked = false;
         updateConfirmationMessage();
         updateButtonStyle();
     });
 
     button2.addEventListener('click', function () {
-        button2Clicked = !button2Clicked;
+        button2Clicked = true;
         button1Clicked = false;
         updateConfirmationMessage();
         updateButtonStyle();
@@ -641,53 +643,24 @@ function setupButtonListeners(
 
     // Function to update the confirmation message based on button states
     function updateConfirmationMessage() {
-    if (
-        (flushingClicked && (button1Clicked || button2Clicked)) ||
-        (oilFilterClicked && (button1Clicked || button2Clicked))
-    ) {
-        // Display the relevant information for the first set of buttons
-        if (flushingClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.flushingButton1;
-        } else if (flushingClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.flushingButton2;
-        } else if (oilFilterClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton1;
-        } else if (oilFilterClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton2;
+        if ((flushingClicked && (button1Clicked || button2Clicked)) ||
+            (oilFilterClicked && (button1Clicked || button2Clicked))) {
+            // Display the relevant information
+            if (flushingClicked && button1Clicked) {
+                confirmationMessage.textContent = messages.flushingButton1;
+            } else if (flushingClicked && button2Clicked) {
+                confirmationMessage.textContent = messages.flushingButton2;
+            } else if (oilFilterClicked && button1Clicked) {
+                confirmationMessage.textContent = messages.oilFilterButton1;
+            } else if (oilFilterClicked && button2Clicked) {
+                confirmationMessage.textContent = messages.oilFilterButton2;
+            }
+        } else {
+            // Reset the message if conditions are not met
+            confirmationMessage.textContent = '';
         }
-    } else if (
-        (flushingClicked && (button1Clicked || button2Clicked)) ||
-        (oilFilterClicked && (button1Clicked || button2Clicked))
-    ) {
-        // Display the relevant information for the second set of buttons
-        if (flushingClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.flushingButton1;
-        } else if (flushingClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.flushingButton2;
-        } else if (oilFilterClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton1;
-        } else if (oilFilterClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton2;
-        }
-    } else if (
-        (flushingClicked && (button1Clicked || button2Clicked)) ||
-        (oilFilterClicked && (button1Clicked || button2Clicked))
-    ) {
-        // Display the relevant information for the third set of buttons
-        if (flushingClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.flushingButton3;
-        } else if (flushingClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.flushingButton4;
-        } else if (oilFilterClicked && button1Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton3;
-        } else if (oilFilterClicked && button2Clicked) {
-            confirmationMessage.textContent = messages.oilFilterButton4;
-        }
-    } else {
-        // Reset the message if conditions are not met
-        confirmationMessage.textContent = '';
     }
-}
+
     // Function to update the button style based on its state
     function updateButtonStyle() {
         updateButton(button1, button1Clicked);
@@ -721,26 +694,21 @@ var secondSetMessages = {
     oilFilterButton2: 'Oil and Filter Package & Fully Synthetic 5w-40 = ₱5,200.00',
 };
 
-var thirdSetMessages = {
-    flushingButton1: 'Flushing & Regular Oil 15w-40 (8Liters) = ₱4,650.00',
-    flushingButton2: 'Flushing & Regular Oil 15w-40 (9Liters) = ₱5,160.00',
-    flushingButton3: 'Flushing & Fully Synthetic 5w-40 (8Liters) = ₱7,760.00',
-    flushingButton4: 'Flushing & Fully Synthetic 5w-40 (9Liters) = ₱8,760.00',
-    oilFilterButton1: 'Oil and Filter Package & Regular Oil 15w-40 (8Liters) = ₱3,550.00',
-    oilFilterButton2: 'Oil and Filter Package & Regular Oil 15w-40 (9Liters) = ₱4,100.00',
-    oilFilterButton3: 'Oil and Filter Package & Fully Synthetic 5w-40 (8Liters) = ₱6,700.00',
-    oilFilterButton4: 'Oil and Filter Package & Fully Synthetic 5w-40 (9Liters) = ₱7,700.00',
-};
 // Call the function for the first set of buttons
 setupButtonListeners('First1', 'First2', 'flushing', 'filter', 'confirmationMessage', false, false, false, false, firstSetMessages);
 
 // Call the function for the second set of buttons
 setupButtonListeners('Fifth1', 'Fifth2', 'flushing', 'filter', 'confirmationMessage', false, false, false, false, secondSetMessages);
 
-// Call the function for the third set of buttons
-setupButtonListeners('Third1', 'Third2', 'flushing', 'filter', 'confirmationMessage', false, false, false, false, thirdSetMessages);
 
 //...................................................................................................
+
+
+
+
+
+
+
 
 
 
