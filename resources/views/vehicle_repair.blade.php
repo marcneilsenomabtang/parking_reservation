@@ -51,17 +51,20 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Parking.html">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white" href="#">Shuttle Service</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("Home.html") }}">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href=" href="{{ route('register') }}">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white" href="{{ url("#") }}">Shuttle Service</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Vehicle-Repair.html">Vehicle Repair</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Food-Service.html">Food Service</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Advertising-Opportunities.html">Advertising Opportunities</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Career-Opportunities.html">Career Opportunities</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="FAQS.html">FAQs</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact us</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About-Us.html">About Us</a>
+<!-- Example button in a Blade file -->
+<li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ route('register') }}">Vehicle Repair</a></li>
+
+
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("Food-.html") }}">Food Service</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("Advertising-Opportunities.html") }}">Advertising Opportunities</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("Career-Opportunities.html") }}">Career Opportunities</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("FAQS.html") }}">FAQs</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("Contact.html") }}">Contact us</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url("About-Us.html") }}">About Us</a>
 </li></ul>
               </div>
             </div>
@@ -279,9 +282,15 @@
           </span>
         </a>
       </div>
+    
     </section>
-    
-    
+    <button class="u-button-style u-hover-custom-color-1 u-btn u-button-hover u-custom-active-color u-custom-border u-custom-border-color u-custom-hover-color u-custom-text-active-color u-custom-text-color u-custom-text-hover-color" style="padding: 10px 20px; font-size: 16px; background-color: #478ac9; color: #fff; border-radius: 5px; margin-bottom: 20px;" onclick="location.href='{{ route('repair_price.index') }}'">
+        Your Button Text
+    </button>
+
+    <script class="u-script" type="text/javascript" src="{{ asset("javascript/jquery.js") }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ asset("javascript/nicepage.js") }}" defer=""></script>
+   
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6375"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> Copyright © Park 'N Fly. All rights reserved.</p>
