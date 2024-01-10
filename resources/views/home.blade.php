@@ -1,5 +1,7 @@
+@include('frontend.body.header')
 @extends('frontend.main_master')
 @section('main')
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +10,7 @@
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/nicepage.css') }}" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/Home.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/Home.css') }}" media=" ">
     <script class="u-script" type="text/javascript" src="{{ asset('javascript/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ asset('javascript/nicepage.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
@@ -38,15 +40,15 @@
      <!-- Top Header End -->
     
      <!-- Top HeaderNav Start -->
-    @include('frontend.body.headernav')
+   
     <!-- Top HeaderNav End -->
    
       <section class="skrollable u-clearfix u-image u-parallax u-section-1" id="sec-645a" data-image-width="4704" data-image-height="3136">
         <form method="get" action="{{ route('slot.index') }}">
         <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-sheet-1">
-          <p class="u-custom-font u-text u-text-white u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction=""> ARRIVE ON TIME<br>
+<br>
             <br>
-          </p>
+          
           @csrf
           <div class="u-custom-font u-text u-text-custom-color-2 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">
             <div class="form-group">
@@ -82,13 +84,7 @@
       </div>
     </section>
 
-    <!-- Book Area Two-->
-    @include('frontend.home.room_area_two')
-    <!-- Book Area Two End -->
-
-    <!-- Room Area -->
-    @include('frontend.home.room_area')
-    <!-- Room Area End -->
+    
 
     <section class="u-clearfix u-section-3" id="sec-3e8a">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -225,9 +221,11 @@
       <p class="u-align-left u-custom-font u-font-arial u-text u-text-white u-text-1">
         <span style="font-weight: 700;">Follow Us&nbsp;</span>
         <br>Secure your spot effortlessly! Follow us on social media for real-time updates, exclusive promotions, and hassle-free parking solutions. Your convenience, our commitment 
-      </p><span class="u-file-icon u-icon u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-direction="X"><img src="{{ asset("/images/1384005-99495e7f.png") }}" alt=""></span><span class="u-file-icon u-icon u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="500"><img src="{{ asset("/images/3669688-ae1caf9d.png") }}" alt=""></span><span class="u-file-icon u-icon u-text-white u-icon-3" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="1000"><img src="{{ asset("/images/2168336-99f6b750.png") }}" alt=""></span>
+      </p><span class="u-file-icon u-icon u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-direction="X"><img src="{{ asset("/images/1384005-99495e7f.png") }}" alt=""></span><span class="u-file-icon u-icon u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="500"></span><span class="u-file-icon u-icon u-text-white u-icon-3" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="1000"></span>
       <p class="u-align-left u-text u-text-2">F</p>
     </section>
+    
+     
     <section class="u-align-center u-border-1 u-border-grey-75 u-clearfix u-section-6" id="sec-426c">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
@@ -263,7 +261,7 @@ Philippines&nbsp;<br>
                       </div>
                       <div class="u-form-group u-form-message u-label-none">
                         <label for="message-c359" class="u-label">Address</label>
-                        <textarea placeholder="Address" rows="4" cols="50" id="message-c359" name="message" class="u-input u-input-rectangle" required=""></textarea>
+                        <textarea placeholder="Write your Message" rows="4" cols="50" id="message-c359" name="message" class="u-input u-input-rectangle" required=""></textarea>
                       </div>
                       <div class="u-form-group u-form-submit">
                         <a href="{{ url("#") }}" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-2 u-hover-white u-text-hover-custom-color-2 u-btn-1">Submit</a>
@@ -274,6 +272,14 @@ Philippines&nbsp;<br>
                       <input type="hidden" value="" name="recaptchaResponse">
                       <input type="hidden" name="formServices" value="47a64133-8ba5-244d-2d11-ac6e479d0892">
                     </form>
+                    <img style="width: 700%; /* Adjust the width as needed */
+                    
+            height: auto; /* Maintain aspect ratio */
+            position: relative;
+            top: -500px; /* Adjust the top position */ 
+            left: -600px; /* Adjust the left position */" 
+     src="{{ asset("/images/Screenshot2023-12-17115758.png") }}" 
+     alt="Custom Image">
                   </div>
                 </div>
               </div>
@@ -289,3 +295,5 @@ Philippines&nbsp;<br>
         <p class="u-small-text u-text u-text-variant u-text-1"> Copyright © Park 'N Fly. All rights reserved.</p>
       </div></footer>
     
+
+      @endsection

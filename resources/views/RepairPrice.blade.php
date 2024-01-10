@@ -12,7 +12,8 @@
         <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
         <meta name="referrer" content="origin">
         <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-        
+        <header class="u-clearfix u-header" id="sec-b1a5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" style="background-color: white;height: 160px;">
+    <div class="u-clearfix u-sheet u-valign-top-md u-valign-top-sm u-valign-top-xs u-sheet-1">
         
         
         <script type="application/ld+json">{
@@ -76,15 +77,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <header class="oil-change-header">
-    <h2 style="font-size: 32px; color:#656163;">Oil Change Package</h2>
-        <!-- Add any additional content for the Oil Change Package header if needed -->
-    </header>
+    <header style="text-align: center; margin-top: 20px;">
+        
     <style>
         body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        }
+        background-image: url('{{ asset("/images/repairbackground.jpg") }}');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; /* You can adjust this value to set the height as needed */
+   
+}
 
 
         .sidenav {
@@ -92,7 +98,7 @@
         width: 300px;
         position: fixed;
         z-index: 1;
-        top: 28%;
+        top: 22%;
         left: 0;
         background-color: #111;
         padding-top: 20px;
@@ -148,7 +154,7 @@
 
         /* Adjusted top position for each brand */
         .dropdown-container#Toyota {
-        top: -130px;
+        top: -170px;
         }
 
         .dropdown-container#Honda {
@@ -222,20 +228,114 @@
     margin-top: 10px;
     color: green;
 }
-        
+
+#gasolineButton,
+        #dieselButton,
+        #gasolineButton1,
+        #dieselButton1,
+        #gasolineButton2,
+        #dieselButton2,
+        #gasolineButton3,
+        #dieselButton3 {
+            display: none;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #gasolineButton:hover,
+        #dieselButton:hover,
+        #gasolineButton1:hover,
+        #dieselButton1:hover,
+        #gasolineButton2:hover,
+        #dieselButton2:hover,
+        #gasolineButton3:hover,
+        #dieselButton3:hover {
+            background-color: #025321;
+        }
+
+
+        .adjustableSquare {
+    width: 600px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    background-color: rgba(236, 237, 235, 0.8); /* Adjust opacity as needed */
+    box-shadow: 5px 5px 10px 0px #888888; /* Adjust shadow properties as needed */
+    position: absolute; /* Use absolute positioning */
+    top: 70%; /* Adjust the top position as needed */
+    left: 34%; /* Adjust the left position as needed */
+    border: 2px solid #000000; /* Add border with desired properties */
+}
+
+        #confirmButton:hover {
+        background-color: #FF4D4D;
+    }
+    .custom-label {
+            
+            top: 60px; /* Adjust the top position as needed */
+            left: 120px; /* Adjust the left position as needed */
+            font-size:40px; /* Adjust the font size as needed */
+            color: #494949; /* Adjust the color as needed */
+        }
     </style>
     </head>
     <body>
-    <div style="position: fixed; top: 25%; right: 50%; text-align: right;">
-            <label for="label1">Brand</label>
-            <input type="text" id="label1" name="label1" style="margin-bottom: 10px;">
-            </div>
-
-
-            <div style="position: fixed; top: 25%; right: 30%; text-align: right;">
-    <label for="label2">Model</label>
-    <input type="text" id="label2" name="label2" style="margin-bottom: 10px;" oninput="checkModel()">
+   
+   
+    <div class="adjustableSquare"></div>
+    <div style="position: fixed; top: 46%; right: 31%; text-align: right;">
+    <label for="label1" style="font-weight: bold; color: #ff1b1d; font-family: 'Arial', sans-serif; font-size: 20px; margin-right: 20px;">Brand:</label>
+    <input type="text" id="label1" name="label1" style="margin-bottom: 10px; padding: 5px; width: 320px; border: 1px solid #ff1b1d; border-radius: 5px; text-align: center;">
 </div>
+
+
+<div class="custom-label">Auto Service Center</div>
+
+
+<div style="position: fixed; top:56%; right: 31%; text-align: right;">
+    <label for="label2" style="font-weight: bold; color: #ff1b1d; font-family: 'Arial', sans-serif; font-size: 20px;margin-right: 20px;">Model:</label>
+    <input type="text" id="label2" name="label2" style="padding: 5px; width: 320px; border: 1px solid #ff1b1d; border-radius: 5px; text-align: center;" oninput="checkModel()">
+</div>
+
+
+
+<div style="position: fixed; top: 67%; right: 45%; text-align: right;">
+    <style>
+        .customButtonGasoline {
+            border-radius: 8px; /* Adjust the value to make it more or less rounded */
+            
+        }
+
+    </style>
+
+        
+    <!-- Gasoline Buttons -->
+    <a id="gasolineButton" class="customButtonGasoline" href="{{ route('mediumvehiclegasoline.index') }}">Gasoline</a>
+    <a id="gasolineButton1" class="customButtonGasoline" style="display: none;" href="{{ route('lightvehicle.index') }}">Gasoline</a>
+    <a id="gasolineButton2" class="customButtonGasoline" style="display: none;" href="{{ route('largevehiclegasoline.index') }}">Gasoline</a>
+    <a id="gasolineButton3" class="customButtonGasoline" style="display: none;" href="{{ route('largevehiclegasoline.index') }}">Gasoline</a>
+
+</div>
+
+<div style="position: fixed; top: 67%; right: 30.5%; text-align: right;">
+
+    <style>
+        .customButtonDiesel {
+            border-radius: 8px; /* Adjust the value to make it more or less rounded */
+        }
+    </style>
+
+
+    <!-- Diesel Buttons -->
+    <a id="dieselButton" class="customButtonDiesel" href="{{ route('mediumvehiclediesel.index') }}">Diesel</a>
+    <a id="dieselButton1" class="customButtonDiesel" style="display: none;" href="{{ route('mediumvehiclediesel.index') }}">Diesel</a>
+    <a id="dieselButton2" class="customButtonDiesel" style="display: none;" href="{{ route('largevehiclediesel.index') }}">Diesel</a>
+    <a id="dieselButton3" class="customButton" style="display: none;" href="{{ route('largevehiclediesel.index') }}">Diesel</a>
+</div>
+
+
 
 
     <div class="sidenav">
@@ -248,10 +348,12 @@
         <a href="#">Wigo</a>
         <a href="#">Veloz</a>
         <a href="#">Raize</a>
+        <a href="#">Rush</a>
         <a href="#">Innova</a>
         <a href="#">Revo</a>
         <a href="#">Alphard</a>
-        <a href="#">Rav4</a>
+        <a href="#">Prado</a>
+        <a href="#">Rav-4</a>
         <a href="#">Camry 2.4/3.5</a>
         <a href="#">Fortuner 06-15 2016 Up</a>
         <a href="#">Fj Cruiser</a>
@@ -260,7 +362,7 @@
         <a href="#">GL</a>
         <a href="#">Grandia</a>
         <a href="#">Super Grandia</a>
-        <a href="#">Landcruiser</a>
+         <a href="#">Landcruiser</a>
 
     </div>
 
@@ -274,12 +376,7 @@
         <a href="#">Brio</a>
         <a href="#">B-RV</a>
         <a href="#">CRV with 2.0 4th Gen</a>
-        <a href="#">D-Max</a>
-        <a href="#">Mux</a>
-        <a href="#">Sportivo</a>
-        <a href="#">Crosswind</a>
-        <a href="#">Altera</a>
-        <a href="#">Trooper</a>
+       
         
     </div>
     <div class="dropdown-btn" id="Isuzu" onclick="toggleDropdown('Isuzu')">Isuzu</div>
@@ -301,7 +398,7 @@
         <a href="#">Sentra</a>
         <a href="#">Almera</a>
         <a href="#">Altima</a>
-        <a href="#">Navarra</a>
+        <a href="#">Navara</a>
         <a href="#">X-Trail</a>
         <a href="#">Terra</a>
         <a href="#">Patrol</a>
@@ -320,11 +417,10 @@
          <a href="#">Xpander</a>
          <a href="#">Adventure</a>
          <a href="#">Montero</a>
-         <a href="#">Sports Pajero</a>
-         <a href="#">Estrada</a>
+         <a href="#">Sports 2016 Pajero</a>
+         <a href="#">Strada</a>
          <a href="#">L300 FB</a>
-         <a href="#">Adventure</a>
-         <a href="#"></a>
+         
     </div>
 
     <div class="dropdown-btn" id="Mazda" onclick="toggleDropdown('Mazda')">Mazda</div>
@@ -339,13 +435,12 @@
 
     <div class="dropdown-btn" id="Hyundai" onclick="toggleDropdown('Hyundai')">Hyundai</div>
     <div class="dropdown-container brand-container" id="Hyundai">
-        <a href="Accent"></a>
+        <a href="#">Accent</a>      
         <a href="#">Gets</a>
         <a href="#">Eon</a>
         <a href="#">Sportage</a>        
         <a href="#">Tucson</a>
         <a href="#">Sta Fe</a>
-        <a href="#">Accent</a>
         <a href="#">Starex</a>
         <a href="#">Grand Starex</a>
     </div>
@@ -405,8 +500,11 @@
     </div>
    
 <!-- button -->
-    <div style="position: fixed; top: 30%; right: 30%; text-align: right;">
-    <button id="confirmButton">Confirm</button>
+<div style="position: fixed; top: 77%; right: 26%; text-align: right;">
+    <button id="confirmButton" style="width: 500px; padding: 10px 20px; border-radius: 8px; background-color: #4CAF50; color: #fff; border: none; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='#FF4D4D'" onmouseout="this.style.backgroundColor='#4CAF50'">
+        Confirm
+    </button>
 </div>
 
 
@@ -417,493 +515,190 @@
 
 
 
-    <div style="position: fixed; top: 30%; right:51%; text-align: right;">
-        <button id="filter" class="custom-button" onclick="changeButtonColor('filter')">Oil Filter Packages</button>
-        <button id="flushing" class="custom-button" onclick="changeButtonColor('flushing')">Flushing</button>
-    </div>
+    
 
 
   
 
-<!-- Add  Light Gasoline Vehicle  -->
-<div style="position: fixed; top: 50%; right: 55%; text-align: right; display: none;" id="First1">
-    <label for="First1"></label>
-    <input type="button" id="First1" name="First1" value="Regular-Oil 20w-50">
-</div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    var dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    var label1 = document.getElementById('label1');
+    var label2 = document.getElementById('label2');
+    var dropdownItems = document.querySelectorAll('.brand-container a');
+    var gasolineButton = document.getElementById('gasolineButton');
+    var dieselButton = document.getElementById('dieselButton');
+    var gasolineButton1 = document.getElementById('gasolineButton1'); // Added for Adventure
+    var dieselButton1 = document.getElementById('dieselButton1'); // Added for Adventure
+    var confirmButton = document.getElementById('confirmButton');
+    var confirmationMessage = document.getElementById('confirmationMessage');
 
-<div style="position: fixed; top: 50%; right: 40%; text-align: right; display: none;" id="First2">
-    <label for="First2"></label>
-    <input type="button" id="First2" name="First2" value="Fully Synthetic 5w-40">
-</div>
+    dropdownBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var dropdownContainer = btn.nextElementSibling;
+            btn.classList.toggle('active');
+            dropdownContainer.classList.toggle('active');
 
-<!-- Add medium Gasoline Vehicle  -->
-<div style="position: fixed; top: 50%; right: 55%; text-align: right; display: none;" id="Fifth1">
-    <label for="Fifth1"></label>
-    <input type="button" id="Fifth1" name="Fifth1" value="Regular-Oil 20w-50">
-</div>
+            var selectedBrand = btn.textContent.trim();
+            var selectedModelElement = dropdownContainer.querySelector('.brand-container a.active');
+            var selectedModel = selectedModelElement ? selectedModelElement.textContent.trim() : '';
 
-<div style="position: fixed; top: 50%; right: 40%; text-align: right; display: none;" id="Fifth2">
-    <label for="Fifth2"></label>
-    <input type="button" id="Fifth2" name="Fifth2" value="Fully Synthetic 5w-40">
-</div>
+            label1.value = selectedBrand;
+            label2.value = selectedModel;
 
-
-<!-- Add  Medium Diesel Vehicle  -->
-<div style="position: fixed; top: 50%; right: 50%; text-align: right; display: none;" id="Second1">
-    <label for="Second1"></label>
-    <input type="button" id="Second1" name="Second1" value="Regular-Oil 15w-40 (7Liters)">
-</div>
-
-<div style="position: fixed; top: 50%; right:30%; text-align: right; display: none;" id="Second2">
-    <label for="Second2"></label>
-    <input type="button" id="Second2" name="Second2" value="Regular-Oil 15w-40 (8Liters)">
-</div>
-
-<div style="position: fixed; top: 50%; right: 10%; text-align: right; display: none;" id="Second3">
-    <label for="Second3"></label>
-    <input type="button" id="Second3" name="Second3" value="Regular-Oil 15w-40 (9Liters)">
-</div>
-
-<div style="position: fixed; top: 60%; right: 50%; text-align: right; display: none;" id="Second4">
-    <label for="Second4"></label>
-    <input type="button" id="Second4" name="Second4" value="Fully Synthetic 5w-40 (7Liters)">
-</div>
-
-<div style="position: fixed; top: 60%; right: 30%; text-align: right; display: none;" id="Second5">
-    <label for="Second5"></label>
-    <input type="button" id="Second5" name="Second5" value="Fully Synthetic 5w-40 (8Liters)">
-</div>
-
-<div style="position: fixed; top: 60%; right: 10%; text-align: right; display: none;" id="Second6">
-    <label for="Second6"></label>
-    <input type="button" id="Second6" name="Second6" value="Fully Synthetic 5w-40 (9Liters)">
-</div>
-
-<!-- Add  large Diesel  Vehicle  -->
-
-<div style="position: fixed; top: 50%; right: 50%; text-align: right; display: none;" id="Third1">
-    <label for="Third1"></label>
-    <input type="button" id="Third1" name="Third1" value="Regular-Oil 15w-40 (8Liters)">
-</div>
-
-<div style="position: fixed; top: 50%; right: 30%; text-align: right; display: none;" id="Third2">
-    <label for="Third2"></label>
-    <input type="button" id="Third2" name="Third2" value="Regular-Oil 15w-40 (9Liters)">
-</div>
-
-<div style="position: fixed; top: 60%; right: 50%; text-align: right; display: none;" id="Third3">
-    <label for="Third3"></label>
-    <input type="button" id="Third3" name="Third3" value="Fully Synthetic 5w-40 (8Liters)">
-</div>
-
-<div style="position: fixed; top: 60%; right: 30%; text-align: right; display: none;" id="Third4">
-    <label for="Third4"></label>
-    <input type="button" id="Third4" name="Third4" value="Fully Synthetic 5w-40 (9Liters)">
-</div>
-    
-
-    <!-- Large Gasoline Vehicle  -->
-
-<div style="position: fixed; top: 50%; right: 50%; text-align: right; display: none;" id="Fourth1">
-    <label for="Fourth1"></label>
-    <input type="button" id="Fourth1" name="Fourth1" value="Regular-Oil 20w-40 (9Liters)">
-</div>
-
-<div style="position: fixed; top: 50%; right: 30%; text-align: right; display: none;" id="Fourth2">
-    <label for="Fourth2"></label>
-    <input type="button" id="Fourth2" name="Fourth2" value="Fully Synthetic 5w-40 (9Liters)">
-</div>
-
-
-
-
-<script>
-        document.addEventListener("DOMContentLoaded", function () {
-        var dropdownBtns = document.querySelectorAll('.dropdown-btn');
-        var label1 = document.getElementById('label1');
-        var label2 = document.getElementById('label2');
-        var dropdownItems = document.querySelectorAll('.brand-container a');
-
-        var firstButton1 = document.getElementById('First1');
-        var firstButton2 = document.getElementById('First2');
-
-        // Additional buttons for the fourth set
-        var fourthButton1 = document.getElementById('Fourth1');
-        var fourthButton2 = document.getElementById('Fourth2');
-
-        dropdownBtns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var dropdownContainer = btn.nextElementSibling;
-                btn.classList.toggle('active');
-                dropdownContainer.classList.toggle('active');
-
-                var selectedBrand = btn.textContent.trim();
-                var selectedModelElement = dropdownContainer.querySelector('.brand-container a.active');
-                var selectedModel = selectedModelElement ? selectedModelElement.textContent.trim() : '';
-
-                label1.value = selectedBrand;
-                label2.value = selectedModel;
-
-                closeOtherDropdowns(btn);
-                checkModel();
-
-                setTimeout(function () {
-                    var clickedBtn = document.querySelector('.dropdown-btn.active');
-                    var dropdownContainer = clickedBtn.nextElementSibling;
-                    clickedBtn.classList.remove('active');
-                    dropdownContainer.classList.remove('active');
-                }, 7000);
-            });
+            closeOtherDropdowns(btn);
+            checkModel();
         });
 
-        dropdownItems.forEach(function (item) {
-            item.addEventListener('click', function () {
-                dropdownItems.forEach(function (otherItem) {
-                    otherItem.classList.remove('active');
-                });
-                item.classList.add('active');
-                var selectedModel = item.textContent.trim();
-                label2.value = selectedModel;
-                var event = new Event('input', { bubbles: true });
-                label2.dispatchEvent(event);
-                checkModel();
-
-                setTimeout(function () {
-                    var clickedBtn = document.querySelector('.dropdown-btn.active');
-                    var dropdownContainer = clickedBtn.nextElementSibling;
-                    clickedBtn.classList.remove('active');
-                    dropdownContainer.classList.remove('active');
-                }, 7000);
-            });
+        // Add mouseleave event listener to close dropdown when the cursor leaves
+        btn.nextElementSibling.addEventListener('mouseleave', function () {
+            var clickedBtn = document.querySelector('.dropdown-btn.active');
+            var dropdownContainer = clickedBtn.nextElementSibling;
+            clickedBtn.classList.remove('active');
+            dropdownContainer.classList.remove('active');
         });
+    });
 
-        function closeOtherDropdowns(clickedBtn) {
-            dropdownBtns.forEach(function (otherBtn) {
-                if (otherBtn !== clickedBtn) {
-                    otherBtn.classList.remove('active');
-                    otherBtn.nextElementSibling.classList.remove('active');
-                }
+    dropdownItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            dropdownItems.forEach(function (otherItem) {
+                otherItem.classList.remove('active');
             });
-        }
-
-
-
-      
-//........................................... Script for Price.....................................................................
-
-
-
-
-
-function setupButtonListeners(
-    button1Id,
-    button2Id,
-    flushingId,
-    oilFilterId,
-    confirmationMessageId,
-    button1Clicked,
-    button2Clicked,
-    flushingClicked,
-    oilFilterClicked,
-    messages
-) {
-    var button1 = document.getElementById(button1Id);
-    var button2 = document.getElementById(button2Id);
-    var flushingButton = document.getElementById(flushingId);
-    var oilFilterButton = document.getElementById(oilFilterId);
-    var confirmationMessage = document.getElementById(confirmationMessageId);
-
-    button1.addEventListener('click', function () {
-        button1Clicked = true;
-        button2Clicked = false;
-        updateConfirmationMessage();
-        updateButtonStyle();
+            item.classList.add('active');
+            var selectedModel = item.textContent.trim();
+            label2.value = selectedModel;
+            var event = new Event('input', { bubbles: true });
+            label2.dispatchEvent(event);
+            checkModel();
+        });
     });
 
-    button2.addEventListener('click', function () {
-        button2Clicked = true;
-        button1Clicked = false;
-        updateConfirmationMessage();
-        updateButtonStyle();
-    });
-
-    flushingButton.addEventListener('click', function () {
-        flushingClicked = !flushingClicked;
-        oilFilterClicked = false; // Ensure only one of them is clicked
-        updateConfirmationMessage();
-        updateButtonStyle();
-    });
-
-    oilFilterButton.addEventListener('click', function () {
-        oilFilterClicked = !oilFilterClicked;
-        flushingClicked = false; // Ensure only one of them is clicked
-        updateConfirmationMessage();
-        updateButtonStyle();
-    });
-
-    // Function to update the confirmation message based on button states
-    function updateConfirmationMessage() {
-        if ((flushingClicked && (button1Clicked || button2Clicked)) ||
-            (oilFilterClicked && (button1Clicked || button2Clicked))) {
-            // Display the relevant information
-            if (flushingClicked && button1Clicked) {
-                confirmationMessage.textContent = messages.flushingButton1;
-            } else if (flushingClicked && button2Clicked) {
-                confirmationMessage.textContent = messages.flushingButton2;
-            } else if (oilFilterClicked && button1Clicked) {
-                confirmationMessage.textContent = messages.oilFilterButton1;
-            } else if (oilFilterClicked && button2Clicked) {
-                confirmationMessage.textContent = messages.oilFilterButton2;
-            }
+    confirmButton.addEventListener('click', function () {
+        var selectedModel = label2.value.toLowerCase();
+        if (selectedModel === 'innova' || selectedModel === 'accent' || selectedModel === 'adventure' || selectedModel === 'patrol' || selectedModel === 'landcruiser') {
+            confirmationMessage.textContent = 'Please pick from Diesel and Gasoline.';
         } else {
-            // Reset the message if conditions are not met
             confirmationMessage.textContent = '';
+
+            // Check if the selected model is in the list
+            var lightVehicleModels = [
+                'vios', 'altis', 'avanza', 'yaris', 'wigo', 'veloz', 'raize', 'rush',
+                'crv 1st to 3rd gen',
+                'civic', 'accord', 'city', 'jazz', 'crv', 'brio', 'b-rv',
+                'sentra', 'almera', 'altima',
+                'mirage', 'lancer', 'xpander',
+                '2', '3', '6',
+                'accent', 'gets', 'eon',
+                'focus', 'fiesta', 'ecosport',
+                'sonic', 'cruze', 'sail', 'spark', 'aveo',
+                'rio', 'picanto', 'soluto',
+                'swift', 'celerio', 'dzire', 'alto', 'caiz', 'vitara', 'jimny', 'apv', 'ertiga'
+            ];
+
+            var mediumVehicleGasolineModels = [
+                'revo', 'alphard', 'rav4', 'camry 2.4/3.5',
+                'crv with 2.0 4th gen',
+                'cx5', 'cx6',
+                'sportage',
+                'escape',
+                'tribute',
+                'captiva',
+                'sorento'
+            ];
+
+            var mediumVehicleDieselModels = [
+                'fortuner 06-15 2016 up', 'fortuner 2016 up', 'fj cruiser', 'hi-lux',
+                'd-max', 'mux', 'sportivo', 'crosswind', 'altera', 'trooper',
+                'navarra', 'x-trail', 'terra',
+                'montero', 'sports 2016 pajero', 'strada', 'l300 fb',
+                'bt-50',
+                'tucson', 'sta fe',
+                'everest 2015 up new model', 'ranger', 'raptor',
+                'trail blazer', 'colorado',
+                'carens', 'carnival'
+            ];
+            var largeVehicleDieselModels = [
+                'hi-ace commuter', 'gl', 'grandia', 'super grandia', 'prado',
+                'nv350', 'urvan', 'escapade', 'estate',
+                'starex', 'grand starex','prado'
+            ];
+            var largeVehicleGasolineModels = [
+                'explorer', 'expedition', 'e-150', 'f-150'
+            ];
+
+            if (lightVehicleModels.includes(selectedModel)) {
+                // Redirect to lightvehicle.blade.php
+                window.location.href = '{{ route("lightvehicle.index") }}?model=' + selectedModel;
+            } else if (mediumVehicleGasolineModels.includes(selectedModel)) {
+                // Redirect to mediumvehiclegasoline.index
+                window.location.href = '{{ route("mediumvehiclegasoline.index") }}?model=' + selectedModel;
+            } else if (mediumVehicleDieselModels.includes(selectedModel)) {
+                // Redirect to mediumvehiclediesel.index
+                window.location.href = '{{ route("mediumvehiclediesel.index") }}?model=' + selectedModel;
+            } else if (largeVehicleDieselModels.includes(selectedModel)) {
+                // Redirect to largevehiclediesel.index
+                window.location.href = '{{ route("largevehiclediesel.index") }}?model=' + selectedModel;
+            } else if (largeVehicleGasolineModels.includes(selectedModel)) {
+                // Redirect to largevehiclegasoline.index
+                window.location.href = '{{ route("largevehiclegasoline.index")}}?model='+ selectedModel;
+            } else {
+                // Hide the buttons
+                gasolineButton.style.display = 'none';
+                dieselButton.style.display = 'none';
+                gasolineButton1.style.display = 'none'; // Added for Adventure
+                dieselButton1.style.display = 'none'; // Added for Adventure
+            }
         }
-    }
-
-    // Function to update the button style based on its state
-    function updateButtonStyle() {
-        updateButton(button1, button1Clicked);
-        updateButton(button2, button2Clicked);
-        updateButton(flushingButton, flushingClicked);
-        updateButton(oilFilterButton, oilFilterClicked);
-    }
-
-    // Function to update the button style based on its state
-    function updateButton(button, clicked) {
-        if (clicked) {
-            button.classList.add('active-button');
-        } else {
-            button.classList.remove('active-button');
-        }
-    }
-}
-
-// Define messages for each combination
-var firstSetMessages = {
-    flushingButton1: 'Flushing & Regular-Oil 20w-50 = ₱2,650.00',
-    flushingButton2: 'Flushing & Fully Synthetic 5w-40 =  ₱4,250.00',
-    oilFilterButton1: 'Oil and Filter Package & Regular-Oil 20w-50 = ₱2,100.00',
-    oilFilterButton2: 'Oil and Filter Package & Fully Synthetic 5w-40 = ₱3,700.00',
-};
-
-var secondSetMessages = {
-    flushingButton1: 'Flushing & Regular Oil 20w-50 = ₱3,595.00',
-    flushingButton2: 'Flushing & Fully Synthetic 5w-40 = ₱5,995.00',
-    oilFilterButton1: 'Oil and Filter Package & Regular Oil 20w-50 = ₱2,800.00',
-    oilFilterButton2: 'Oil and Filter Package & Fully Synthetic 5w-40 = ₱5,200.00',
-};
-
-// Call the function for the first set of buttons
-setupButtonListeners('First1', 'First2', 'flushing', 'filter', 'confirmationMessage', false, false, false, false, firstSetMessages);
-
-// Call the function for the second set of buttons
-setupButtonListeners('Fifth1', 'Fifth2', 'flushing', 'filter', 'confirmationMessage', false, false, false, false, secondSetMessages);
-
-
-//...................................................................................................
-
-
-
-
-
-
-
-
-
-
-
-function checkModel() {
-    var modelInput = label2.value.toLowerCase();
-
-    var supportedModels = [
-        'vios', 'altis', 'avanza', 'yaris', 'wigo', 'veloz', 'raize', 'rush',
-        'civic', 'accord', 'city', 'jazz', 'crv', 'brio', 'b-rv', 'sentra',
-        'almera', 'altima', 'mirage', 'lancer', 'xpander', '2', '3', '6',
-        'accent', 'gets', 'eon', 'focus', 'fiesta', 'ecosport', 'sonic',
-        'cruze', 'sail', 'spark', 'aveo', 'rio', 'picanto', 'soluto',
-        'swift', 'celerio', 'dzire', 'alto', 'caiz', 'vitara', 'jimny',
-        'apv', 'ertiga'
-    ];
-
-    // Additional models to show the new sets of buttons
-    var showButtonsForNewModels = [
-        'fortuner', 'fj cruiser', 'hi-lux',
-        'd-max', 'mux', 'sportivo', 'crosswind', 'altera', 'trooper',
-        'navarra', 'x-trail', 'terra',
-        'montero', 'sports 2016 pajero', 'estrada', 'l300 fb adventure',
-        'bt-50',
-        'tucson', 'sta fe', 'accent',
-        'everest 2015 up new model', 'ranger', 'raptor',
-        'trail blazer', 'colorado',
-        'carens', 'carnival',
-    ];
-
-    // Additional sets of buttons to show
-    var newButtons = ['Second1', 'Second2', 'Second3', 'Second4', 'Second5', 'Second6'];
-
-    // Additional models and sets of buttons for the third set
-    var showButtonsForThirdModels = ['hi-ace commuter', 'gl', 'grandia', 'super grandia', 'prado', 'land cruiser', 'patrol', 'nv350', 'urvan', 'escapade', 'estate', 'starex', 'grand starex'];
-    var thirdButtons = ['Third1', 'Third2', 'Third3', 'Third4'];
-
-    // Additional models for the fourth set of buttons
-    var showButtonsForFourthModels = ['landcruiser', 'patrol','explorer', 'expedition', 'e-150', 'f-150'];
-
-    // Additional set of buttons for the fourth set
-    var fourthButtons = ['Fourth1', 'Fourth2'];
-
-    // Additional models for the fifth set of buttons
-    var showButtonsForFifthModels = ['innova', 'revo', 'alphard', 'rav4', 'camry2.4', 'camry3.5', 'crv', '2.0 4th gen', 'adventure', 'cx5', 'cx6', 'sportage', 'escape', 'tribute', 'captiva', 'sorento', 'sportage'];
-
-    // Additional set of buttons for the fifth set
-    var fifthButtons = ['Fifth1', 'Fifth2'];
-
-    if (supportedModels.some(model => modelInput.includes(model))) {
-        console.log('Buttons should be visible for supported models.');
-        // Display the first set of buttons
-        firstButton1.style.display = 'block';
-        firstButton2.style.display = 'block';
-
-        // Hide the new sets of buttons
-        newButtons.forEach(function (buttonId) {
-            var newButton = document.getElementById(buttonId);
-            newButton.style.display = 'none';
-        });
-
-        // Hide the third set of buttons
-        thirdButtons.forEach(function (buttonId) {
-            var thirdButton = document.getElementById(buttonId);
-            thirdButton.style.display = 'none';
-        });
-
-        // Hide the fourth set of buttons
-        fourthButtons.forEach(function (buttonId) {
-            var fourthButton = document.getElementById(buttonId);
-            fourthButton.style.display = 'none';
-        });
-
-        // Hide the fifth set of buttons
-        fifthButtons.forEach(function (buttonId) {
-            var fifthButton = document.getElementById(buttonId);
-            fifthButton.style.display = 'none';
-        });
-    } else if (showButtonsForNewModels.some(model => modelInput.includes(model))) {
-        console.log('New sets of buttons should be visible.');
-        // Hide the first set of buttons
-        firstButton1.style.display = 'none';
-        firstButton2.style.display = 'none';
-
-        // Display the new sets of buttons
-        newButtons.forEach(function (buttonId) {
-            var newButton = document.getElementById(buttonId);
-            newButton.style.display = 'block';
-        });
-
-        // Hide the third set of buttons
-        thirdButtons.forEach(function (buttonId) {
-            var thirdButton = document.getElementById(buttonId);
-            thirdButton.style.display = 'none';
-        });
-
-        // Hide the fourth set of buttons
-        fourthButtons.forEach(function (buttonId) {
-            var fourthButton = document.getElementById(buttonId);
-            fourthButton.style.display = 'none';
-        });
-
-        // Hide the fifth set of buttons
-        fifthButtons.forEach(function (buttonId) {
-            var fifthButton = document.getElementById(buttonId);
-            fifthButton.style.display = 'none';
-        });
-    } else if (showButtonsForThirdModels.some(model => modelInput.includes(model))) {
-        console.log('Third set of buttons should be visible.');
-        // Hide the first set of buttons
-        firstButton1.style.display = 'none';
-        firstButton2.style.display = 'none';
-
-        // Hide the new sets of buttons
-        newButtons.forEach(function (buttonId) {
-            var newButton = document.getElementById(buttonId);
-            newButton.style.display = 'none';
-        });
-
-        // Display the third set of buttons
-        thirdButtons.forEach(function (buttonId) {
-            var thirdButton = document.getElementById(buttonId);
-            thirdButton.style.display = 'block';
-        });
-
-        // Hide the fourth set of buttons
-        fourthButtons.forEach(function (buttonId) {
-            var fourthButton = document.getElementById(buttonId);
-            fourthButton.style.display = 'none';
-        });
-
-        // Hide the fifth set of buttons
-        fifthButtons.forEach(function (buttonId) {
-            var fifthButton = document.getElementById(buttonId);
-            fifthButton.style.display = 'none';
-        });
-    } else if (showButtonsForFourthModels.some(model => modelInput.includes(model))) {
-        console.log('Fourth set of buttons should be visible.');
-        // Hide the first set of buttons
-        firstButton1.style.display = 'none';
-        firstButton2.style.display = 'none';
-
-        // Hide the new sets of buttons
-        newButtons.forEach(function (buttonId) {
-            var newButton = document.getElementById(buttonId);
-            newButton.style.display = 'none';
-        });
-
-        // Hide the third set of buttons
-        thirdButtons.forEach(function (buttonId) {
-            var thirdButton = document.getElementById(buttonId);
-            thirdButton.style.display = 'none';
-        });
-
-        // Display the fourth set of buttons
-        fourthButtons.forEach(function (buttonId) {
-            var fourthButton = document.getElementById(buttonId);
-            fourthButton.style.display = 'block';
-        });
-
-        // Hide the fifth set of buttons
-        fifthButtons.forEach(function (buttonId) {
-            var fifthButton = document.getElementById(buttonId);
-            fifthButton.style.display = 'none';
-        });
-    } else if (showButtonsForFifthModels.some(model => modelInput.includes(model))) {
-        console.log('Fifth set of buttons should be visible.');
-        // Hide all sets of buttons except the fifth set
-        firstButton1.style.display = 'none';
-        firstButton2.style.display = 'none';
-
-        newButtons.concat(thirdButtons, fourthButtons).forEach(function (buttonId) {
-            var button = document.getElementById(buttonId);
-            button.style.display = 'none';
-        });
-
-        // Display the fifth set of buttons
-        fifthButtons.forEach(function (buttonId) {
-            var fifthButton = document.getElementById(buttonId);
-            fifthButton.style.display = 'block';
-        });
-    } else {
-        console.log('Buttons should be invisible.');
-        // Hide all sets of buttons
-        firstButton1.style.display = 'none';
-        firstButton2.style.display = 'none';
-
-        newButtons.concat(thirdButtons, fourthButtons, fifthButtons).forEach(function (buttonId) {
-            var button = document.getElementById(buttonId);
-            button.style.display = 'none';
-        });
-    }
-}
     });
+
+    function closeOtherDropdowns(clickedBtn) {
+        dropdownBtns.forEach(function (otherBtn) {
+            if (otherBtn !== clickedBtn) {
+                otherBtn.classList.remove('active');
+                otherBtn.nextElementSibling.classList.remove('active');
+            }
+        });
+    }
+
+    function checkModel() {
+        var selectedBrand = label1.value.trim();
+        var selectedModel = label2.value.trim();
+
+        // Check if either brand or model is not selected
+        if (selectedBrand === '' || selectedModel === '') {
+            confirmationMessage.textContent = 'Please select your car brand and model.';
+        } else {
+            confirmationMessage.textContent = '';
+
+            // Check if the selected model is Innova, Accent, Adventure, Patrol, or Landcruiser
+            if (selectedModel.toLowerCase() === 'innova' || selectedModel.toLowerCase() === 'accent' || selectedModel.toLowerCase() === 'adventure' || selectedModel.toLowerCase() === 'patrol' || selectedModel.toLowerCase() === 'landcruiser') {
+                // Show the buttons for Innova, Accent, Adventure, Patrol, Landcruiser
+                gasolineButton.style.display = 'inline-block';
+                dieselButton.style.display = 'inline-block';
+                gasolineButton1.style.display = 'none'; // Added for Adventure
+                dieselButton1.style.display = 'none'; // Added for Adventure
+            } else {
+                // Hide all buttons for other models
+                gasolineButton.style.display = 'none';
+                dieselButton.style.display = 'none';
+                gasolineButton1.style.display = 'none'; // Added for Adventure
+                dieselButton1.style.display = 'none'; // Added for Adventure
+            }
+        }
+    }
+
+    dieselButton.addEventListener('click', function () {
+        dieselButton.classList.add('selected');
+        gasolineButton.classList.remove('selected');
+    });
+
+    gasolineButton.addEventListener('click', function () {
+        gasolineButton.classList.add('selected');
+        dieselButton.classList.remove('selected');
+    });
+});
 </script>
+
 
 
     </div>
