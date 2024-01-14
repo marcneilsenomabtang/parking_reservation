@@ -74,7 +74,7 @@
         </nav>
       </div></header>
     <section class="u-clearfix u-white u-section-1" id="carousel_eb2b">
-      <img class="u-expanded-width u-image u-image-1" src="{{ asset("/images/e336f2c1851721eddf888c8a0d2fa1311bf56973140b53689ab32c368c043fa6b5be32e82e6d7760f98109f348753972ddca721f51d9268316990a_1280.jpg") }}" data-image-width="1280" data-image-height="853">
+      <img class="u-expanded-width u-image u-image-1" src="images/e336f2c1851721eddf888c8a0d2fa1311bf56973140b53689ab32c368c043fa6b5be32e82e6d7760f98109f348753972ddca721f51d9268316990a_1280.jpg" data-image-width="1280" data-image-height="853">
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
           <div class="u-align-center u-container-style u-list-item u-opacity u-opacity-95 u-repeater-item u-white u-list-item-1">
@@ -125,7 +125,7 @@
 </g></svg></span>
               <h5 class="u-text u-text-7">Email</h5>
               <p class="u-text u-text-8">
-                <a href="{{ url("mailto:hello@theme.com") }}" class="u-active-none u-border-1 u-border-active-black u-border-custom-color-2 u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-hover-none u-none u-text-active-black u-text-custom-color-2 u-text-hover-black u-btn-1">customer ​care@parknfly.com.ph</a>
+                <a href="mailto:hello@theme.com" class="u-active-none u-border-1 u-border-active-black u-border-custom-color-2 u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-hover-none u-none u-text-active-black u-text-custom-color-2 u-text-hover-black u-btn-1">customer ​care@parknfly.com.ph</a>
               </p>
             </div>
           </div>
@@ -156,20 +156,20 @@
                       <textarea placeholder="Enter your message" rows="4" cols="50" id="message-319a" name="message" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required=""></textarea>
                     </div>
                     <div class="u-align-left u-form-group u-form-submit">
-                      <a href="{{ url("#") }}" class="u-btn u-btn-submit u-button-style u-white u-btn-2">Submit</a>
+                      <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-2">Submit</a>
                       <input type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
                     </div>
                     <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
                     <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
                     <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
-                    <input type="hidden" name="formServices" value="0573d380-3caf-ff86-a790-e3225c7d3be8">
+                    <input type="hidden" name="formServices" value="">
                   </form>
                 </div>
               </div>
             </div>
             <div class="u-black u-container-style u-layout-cell u-opacity u-opacity-0 u-right-cell u-size-30 u-layout-cell-2">
               <div class="u-container-layout u-container-layout-6">
-                <img class="u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-expanded u-image u-image-default" src="{{ asset("/images/Screenshot2023-12-17115758.png") }}" alt="" data-image-width="856" data-image-height="743">
+                <img class="u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-expanded u-image u-image-default" src="images/Screenshot2023-12-17115758.png" alt="" data-image-width="856" data-image-height="743">
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="{{ url("") }}" target="_blank">
+      <a class="u-link" href="" target="_blank">
         <span>Website Builder Software</span>
       </a>. 
     </section>

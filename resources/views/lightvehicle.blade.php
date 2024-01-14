@@ -37,7 +37,7 @@
             </div>
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('home.index') }}" style="padding: 10px 14px;">Home</a>
-    </li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ url("Parking.html") }}" style="padding: 10px 14px;">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white u-white" href="{{ url("#") }}">Shuttle Service</a>
+    </li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('parking.index') }}"  style="padding: 10px 14px;">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white u-white" href="{{ url("#") }}">Shuttle Service</a>
     </li></ul>
     </div>
     </li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('vehiclerepair.index') }}" style="padding: 10px 14px;">Vehicle Repair</a>
@@ -100,18 +100,29 @@
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <style>
-        #adjustableSquare {
-            width: 450px;
-            height: 470px;
-            top: 50px;
-            left: 700px;
-            background-color: transparent;
-            border: 2px solid #333;
-            box-shadow: 5px 5px 10px #888888;
-            position: absolute;
-            border-radius: 10px;
-        }
+          #adjustableSquare {
+        width: 450px;
+        height: 470px;
+        top: 190px;
+        left: 75%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        border: 2px solid #333;
+        box-shadow: 5px 5px 10px #888888;
+        position: fixed; /* Change position to fixed */
+        border-radius: 10px;
+    }
+
 
         form {
             display: flex;
@@ -214,15 +225,114 @@
     }
     #bottomText {
     position: absolute;
-    bottom: -200px; /* Adjust the bottom distance */
+    bottom: 30px; /* Adjust the bottom distance */
     left: 20px; /* Adjust the left distance */
     font-size: 18px; /* Adjust the font size */
     font-weight: bold; /* Make the text bold */
 }
+
+.line {
+            position: absolute;
+            border-top: 1px solid #000; /* Adjust color and size as needed */
+            width: 50%; /* Adjust width as needed */
+            top: 550px; /* Adjust top position */
+            left: -2%; /* Adjust left position */
+            border-top: 2px solid #000;
+        }
+
+
+
+        #CleaningText {
+        position: absolute;
+        bottom: -50px; /* Adjust the bottom distance */
+        left: 140px; /* Adjust the left distance */
+        font-size: 30px; /* Adjust the font size */
+        font-weight: bold; /* Make the text bold */
+        color: red; /* Set the text color to red */
+
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 10px;
+            top:500px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* Enhanced style for the on/off switch in column 3 */
+        .on-off-switch {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid #999;
+            overflow: hidden;
+        }
+
+        .on-off-switch::before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+            border: 1px solid #999;
+        }
+
+        /* Toggle the switch on click */
+        .on-off-switch.active::before {
+            transform: translateX(30px);
+        }
+
+        .on-off-switch.active {
+            background-color: #5cb85c; /* Green color for 'ON' state */
+        }
+
+        .on-off-switch.inactive {
+            background-color: #d9534f; /* Red color for 'OFF' state */
+        }
+
+        p {
+        position: relative;
+        top:500px;
+        left: -230px; 
+    }
+
+    #totalAmount {
+        display: inline-block;
+        margin-left: 10px; /* Adjust the margin as needed */
+        font-weight: bold;
+        font-size: 18px; /* Adjust the font size as needed */
+        position: absolute;
+        top:0px;
+        left: 600px; /* Adjust the left position as needed */
+    }
+    
     </style>
+
+
+
+
+
+
 </head>
 
 <body>
+<div class="line"></div>
     <div id="adjustableSquare">
         <!-- Customer Information Form -->
         <form id="orderForm">
@@ -253,14 +363,95 @@
 <button class="adjust-button regular-oil-button" onclick="adjustRegularOilAndFullySynthetic('Regular Oil')">Regular Oil 20w-50</button>
 <button class="adjust-button fully-synthetic-button" onclick="adjustRegularOilAndFullySynthetic('Fully Synthetic')">Fully Synthetic 5w-40</button>
 
+
 <div id="bottomText"></div>
 
 
 
 
 
+<div id="CleaningText">Cleaning Package</div>
+<div class="line"></div>
+<table>
+
+            <thead>
+            <tr>
+            <td>Car wash</td>
+            <td>₱280.00</td>
+            <td class="on-off-switch" onclick="toggleSwitch(this, 280)"></td>
+        </tr>
+
+                <tr>
+                    <td>Vacuum</td>
+                    <td>₱210.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,210)"></td>
+                </tr>
+
+                <tr>
+                    <td>Engine Wash</td>
+                    <td>₱420.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,420)"></td>
+                </tr>
+
+                <tr>
+                    <td>Under Chassis Wash</td>
+                    <td>₱350.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,350)"></td>
+                </tr>
+
+                <tr>
+                    <td>Promo Package (1,2,3,4)</td>
+                    <td>₱970.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,970)"></td>
+                </tr>
+
+                <tr>
+                    <td>Engine Detailing</td>
+                    <td>₱1,150.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,1150.00)"></td>
+                </tr>
+
+                <tr>
+                    <td>Exterior Detailing</td>
+                    <td>₱5,150.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,5150.00)"></td>
+                </tr>
+
+                <tr>
+                    <td>Interior Detailing</td>
+                    <td>₱3,050.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,3050.00)"></td>
+                </tr>
+
+                <tr>
+                    <td>Complete Auto Detailing</td>
+                    <td>₱8,150.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,8150.00)"></td>
+                </tr>
+
+                <tr>
+                    <td>Waxing (Microtex)</td>
+                    <td>₱1,180.00</td>
+                    <td class="on-off-switch" onclick="toggleSwitch(this,1180.00)"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <p>Total: <span id="totalAmount">₱0.00</span></p>
+
+
+
+
     
     <script>
+
+
+
+
+
+
+
         // Get the model from the URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const model = urlParams.get('model');
@@ -345,6 +536,9 @@
             flushingButton.classList.add('active');
         }
     }
+    function toggleSwitch(element) {
+            element.classList.toggle('active');
+        }
 
     // Function to adjust size and activate Regular Oil and Fully Synthetic buttons
     function adjustRegularOilAndFullySynthetic(buttonType) {
@@ -362,7 +556,19 @@
             fullySyntheticButton.classList.add('active');
         }
     }
+    let total = 0;
+    function toggleSwitch(element, amount) {
+    const switchState = element.classList.toggle('active');
+    total = switchState ? total + amount : total - amount;
+    document.getElementById('totalAmount').innerText = `₱${total.toFixed(2)}`;
+}
+    
+    
+
+
 </script>
+
+
 </body>
 
 </html> 

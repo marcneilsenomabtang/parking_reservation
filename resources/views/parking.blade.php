@@ -20,9 +20,9 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "Site2"
-}</script>
+  }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Parking">
+    <meta property="og:title" content="Contact">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header" id="sec-b1a5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-valign-top-md u-valign-top-sm u-valign-top-xs u-sheet-1">
@@ -37,7 +37,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('home.index') }}" style="padding: 10px 14px;">Home</a>
-</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('parking.index') }}" style="padding: 10px 14px;">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white u-white" href="{{ url("#") }}">Shuttle Service</a>
+</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ url("Parking.html") }}" style="padding: 10px 14px;">Parking</a><div class="u-nav-popup"><ul class="u-h-spacing-12 u-nav u-unstyled u-v-spacing-20"><li class="u-nav-item"><a class="u-button-style u-hover-custom-color-1 u-nav-link u-text-hover-white u-white" href="{{ url("#") }}">Shuttle Service</a>
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a class="u-active-custom-color-2 u-button-style u-hover-custom-color-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="{{ route('vehiclerepair.index') }}" style="padding: 10px 14px;">Vehicle Repair</a>
