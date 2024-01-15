@@ -101,17 +101,54 @@
     <link id="u-theme-google-font" rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
         <style>
-        #adjustableSquare {
-            width: 450px;
-            height: 470px;
-            top: 50px;
-            left: 700px;
-            background-color: transparent;
-            border: 2px solid #333;
-            box-shadow: 5px 5px 10px #888888;
-            position: absolute;
-            border-radius: 10px;
-        }
+          <style>
+        body {
+    background: url('{{ asset('images/background1.jpg') }}') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden; /* Ensure the body does not show scrollbars */
+}
+
+#content-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a pseudo-element for the parallax effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('{{ asset('images/background1.jpg') }}') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Place it behind the content container */
+    transform: translateZ(0); /* Create a new stacking context for proper rendering */
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
+
+#content-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+       #adjustableSquare {
+        width: 450px;
+        height: 470px;
+        top: 190px;
+        left: 75%;
+        transform: translateX(-50%);
+        background-color: #ffff;
+        border: 2px solid #333;
+        box-shadow: 5px 5px 10px #888888;
+        position: fixed; /* Change position to fixed */
+        border-radius: 10px;
+    }
+ 
 
         form {
             display: flex;
@@ -218,10 +255,10 @@
     }
     #bottomText {
     position: absolute;
-    bottom: -300px; /* Adjust the bottom distance */
-    left: 20px; /* Adjust the left distance */
+    bottom: 90px; /* Adjust the bottom distance */
+    left:-80px; /* Adjust the left distance */
     font-size: 18px; /* Adjust the font size */
-    font-weight: bold; /* Make the text bold */
+    
 }
 
 .regular-oil-button {
@@ -247,10 +284,196 @@
         top: 220px; /* Adjust the top value for the Fully button */
         left: -550px; /* Adjust the left value for the Fully button */
     }
+    
+.line {
+            position: absolute;
+            border-top: 1px solid #000; /* Adjust color and size as needed */
+            width: 100%; /* Adjust width as needed */
+            top: 570px; /* Adjust top position */
+            left: -2%; /* Adjust left position */
+            border-top: 2px solid #000;
+            z-index: -1;
+        }
+        .line2 {
+            position: absolute;
+            border-top: 1px solid #000; /* Adjust color and size as needed */
+            width: 100%; /* Adjust width as needed */
+            top: 1150px; /* Adjust top position */
+            left: -2%; /* Adjust left position */
+            border-top: 2px solid #000;
+            z-index: -1;
+        }
+
+
+
+
+        #CleaningText {
+        position: absolute;
+        bottom: -70px; /* Adjust the bottom distance */
+        left: 140px; /* Adjust the left distance */
+        font-size:40px; /* Adjust the font size */
+        font-weight: bold; /* Make the text bold */
+        color: red; /* Set the text color to red */
+
+        }
+        #RepairText {
+        position: absolute;
+        bottom: -680px; /* Adjust the bottom distance */
+        left: 10px; /* Adjust the left distance */
+        font-size:40px; /* Adjust the font size */
+        font-weight: bold; /* Make the text bold */
+        color: red; /* Set the text color to red */
+
+        }
+
+
+        table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 10px;
+    top: 500px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 5px;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+    transform: scale(1.5);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Add white checkmark inside checked checkboxes */
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Change background color and box-shadow when checked for all checkboxes */
+input[type="checkbox"]:checked {
+    background-color: green;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Adjust box-shadow color for checked state */
+}
+
+p {
+    position: relative;
+    top: 500px;
+    left: -190px;
+}
+
+#totalAmount {
+    display: inline-block;
+    margin-left: 10px; /* Adjust the margin as needed */
+    font-weight: bold;
+    font-size: 18px; /* Adjust the font size as needed */
+    position: absolute;
+    top:0px; /* Corrected the typo here */
+    left: 600px; /* Adjust the left position as needed */
+}
+  #oilAmount {
+        position: absolute;
+        bottom:175px; /* Adjust the bottom distance */
+        left: 600px; /* Adjust the left distance */
+        font-size: 18px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the text bold */
+    }
+
+
+
+
+
+
+
+#newTableSet {
+    position: absolute;
+    top: 1300px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+}
+
+#newTableSet table {
+    width: 100%; /* Adjust the width as needed */
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+#newTableSet th, #newTableSet td {
+    border: 1px solid #333;
+    padding: 5px;
+    text-align: center;
+}
+
+#newTableSet input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+    transform: scale(1.5);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+#newTableSet input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#newTableSet input[type="checkbox"]:checked {
+    background-color: green;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Adjust box-shadow color for checked state */
+}
+
+#newTableSet p {
+    position: relative;
+    top:0px;
+    left: 150px;
+}
+
+#newTotalAmount {
+    display: inline-block;
+    margin-left: 0px; /* Adjust the margin as needed */
+    font-weight: bold;
+    font-size: 18px; /* Adjust the font size as needed */
+    position: absolute;
+    top:0px; /* Corrected the typo here */
+    left: 320px; /* Adjust the left position as needed */
+}
+
+
     </style>
 </head>
 
 <body>
+<div class="line"></div>
+<div class="line2   "></div>
     <div id="adjustableSquare">
         <!-- Customer Information Form -->
         <form id="orderForm">
@@ -284,6 +507,131 @@
 <button class="adjust-button fully-button" onclick="adjustRegularOilAndFullySynthetic('Fully')">Fully Synthetic 5w-40 (8Liters)</button>
 
 <div id="bottomText"></div>
+<div id="bottomText"></div>
+<p><span id="oilAmount">₱0.00</span></p>
+
+<div id="CleaningText">Cleaning Package</div>
+
+<div class="line"></div>
+<table>
+
+<thead>
+   
+</thead>
+<tbody>
+    <tr>
+        <td>Car wash</td>
+        <td>₱280.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this, 280)"></td>
+    </tr>
+
+    <tr>
+        <td>Vacuum</td>
+        <td>₱210.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,210)"></td>
+    </tr>
+
+    <tr>
+        <td>Engine Wash</td>
+        <td>₱420.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,420)"></td>
+    </tr>
+
+    <tr>
+        <td>Under Chassis Wash</td>
+        <td>₱350.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,350)"></td>
+    </tr>
+
+    <tr>
+        <td>Promo Package (1,2,3,4)</td>
+        <td>₱970.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,970)"></td>
+    </tr>
+
+    <tr>
+        <td>Engine Detailing</td>
+        <td>₱1,150.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,1150.00)"></td>
+    </tr>
+
+    <tr>
+        <td>Exterior Detailing</td>
+        <td>₱5,150.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,5150.00)"></td>
+    </tr>
+
+    <tr>
+        <td>Interior Detailing</td>
+        <td>₱3,050.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,3050.00)"></td>
+    </tr>
+
+    <tr>
+        <td>Complete Auto Detailing</td>
+        <td>₱8,150.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,8150.00)"></td>
+    </tr>
+
+    <tr>
+        <td>Waxing (Microtex)</td>
+        <td>₱1,180.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,1180.00)"></td>
+    </tr>
+</tbody>
+        </table>
+
+
+        <p>Total: <span id="totalAmount">₱0.00</span></p>
+
+
+
+        <div id="RepairText">Maintenance and Repair Package</div>
+    
+
+        <div id="newTableSet">
+    <div class="line"></div>
+    <table>
+        
+        <tbody>
+            <tr>
+                <td>Electronic 4-Wheel Alignment</td>
+                <td>₱2,100.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 2100, true)">
+            </tr>
+            <tr>
+                <td>Electronic Wheel Balancing/Tire <br>(Add-on Flat weights,Wheel Weights,Bostik)</td>
+                <td>₱325.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 325,true)"></td>
+            </tr>
+            <td>Tire Mounting/Tire</td>
+                <td>₱470.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 470, true)">
+            </tr>
+            <tr>
+                <td>Vulcanizing/Tire (Plus Patches & Chemicure)</td>
+                <td>₱470.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 470,true)"></td>
+            </tr>
+            <td>Open/Clean & Adjust All Breaks</td>
+                <td>₱2,100.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 2100, true)">
+            </tr>
+            <tr>
+                <td>Check-up Charge (Under Chassis,Engine,Aircon,Electrical)</td>
+                <td>₱800.00</td>
+                <td><input type="checkbox" onclick="toggleSwitch(this, 800,true)"></td>
+            </tr>
+            
+            <!-- Add more rows if needed -->
+        </tbody>
+    </table>
+    <p>Total: <span id="newTotalAmount">₱0.00</span></p>
+</div>
+
+
+
+
 
 
 
@@ -291,6 +639,20 @@
 
     
     <script>
+           let total = 0; // Total variable for the existing set of tables
+        let newTotal = 0; // Total variable for the new set of tables
+
+        function toggleSwitch(element, amount, isNewSet) {
+            const switchState = element.classList.toggle('active');
+
+            if (isNewSet) {
+                newTotal = switchState ? newTotal + amount : newTotal - amount;
+                document.getElementById('newTotalAmount').innerText = `₱${newTotal.toFixed(2)}`;
+            } else {
+                total = switchState ? total + amount : total - amount;
+                document.getElementById('totalAmount').innerText = `₱${total.toFixed(2)}`;
+            }
+        }
         // Get the model from the URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const model = urlParams.get('model');
@@ -341,25 +703,34 @@
             const fullySyntheticButton = document.querySelector('.fully-synthetic-button');
             const regularButton = document.querySelector('.regular-button');
             const fullyButton = document.querySelector('.fully-button');
+            const oilAmountLabel = document.getElementById('oilAmount');
 
             const bottomText = document.getElementById('bottomText');
 
             if (oilFilterButton.classList.contains('active') && regularOilButton.classList.contains('active')) {
-                bottomText.textContent = "Oil & Filter Package and Regular Oil 20w-40 (8Liters) = ₱3,550.00";
+                bottomText.textContent = "Oil & Filter Package and Regular Oil 20w-40 (8Liters) =";
+                oilAmountLabel.textContent = " ₱3,550.00";
             } else if (oilFilterButton.classList.contains('active') && regularButton.classList.contains('active')) {
-                bottomText.textContent = "Oil & Filter Package and Regular Oil 20w-40 (9Liters)= ₱4,100.00";
+                bottomText.textContent = "Oil & Filter Package and Regular Oil 20w-40 (9Liters) = ";
+                oilAmountLabel.textContent = " ₱4,100.00";
             } else if (oilFilterButton.classList.contains('active') && fullySyntheticButton.classList.contains('active')) {
-                bottomText.textContent = "Oil & Filter Package and Fully Synthetic 5w-40 (8Liters)= ₱6,700.00";
+                bottomText.textContent = "Oil & Filter Package and Fully Synthetic 5w-40 (8Liters) =";
+                oilAmountLabel.textContent = "  ₱6,700.00";
             } else if (oilFilterButton.classList.contains('active') && fullyButton.classList.contains('active')) {
-                bottomText.textContent = "Oil & Filter Package and Fully Synthetic 5w-40 (9Liters)= ₱7,700.00";
+                bottomText.textContent = "Oil & Filter Package and Fully Synthetic 5w-40 (9Liters) =";
+                oilAmountLabel.textContent = " ₱7,700.00";
             } else if (flushingButton.classList.contains('active') && regularOilButton.classList.contains('active')) {
-                bottomText.textContent = "Flushing and RRegular Oil 20w-40 (8Liters) = ₱4,650.00";
+                bottomText.textContent = "Flushing and Regular Oil 20w-40 (8Liters) = ";
+                oilAmountLabel.textContent = " ₱4,650.00";
             } else if (flushingButton.classList.contains('active') && regularButton.classList.contains('active')) {
-                bottomText.textContent = "Flushing and Regular Oil 20w-40 (9Liters) = ₱5,160.00";
+                bottomText.textContent = "Flushing and Regular Oil 20w-40 (9Liters) = ";
+                oilAmountLabel.textContent = " ₱5,160.00";
             } else if (flushingButton.classList.contains('active') && fullySyntheticButton.classList.contains('active')) {
-                bottomText.textContent = "Flushing and Fully Synthetic 5w-40 (8Liters) = ₱7,760.00";
+                bottomText.textContent = "Flushing and Fully Synthetic 5w-40 (8Liters) =";
+                oilAmountLabel.textContent = " ₱7,760.00";
             } else if (flushingButton.classList.contains('active') && fullyButton.classList.contains('active')) {
-                bottomText.textContent = "Flushing and Fully Synthetic 5w-40 (9Liters) = ₱8,760.00";
+                bottomText.textContent = "Flushing and Fully Synthetic 5w-40 (9Liters) = ";
+                oilAmountLabel.textContent = " ₱8,760.00";
             } else {
                 bottomText.textContent = ""; // Clear text if no combination is selected
             }
