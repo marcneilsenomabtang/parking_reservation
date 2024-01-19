@@ -2,8 +2,11 @@
 @extends('frontend.main_master')
 @section('main')
 
+
+
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html style="font-size: 16px;" lang="en">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Safe and Secure, ​Car Repair Services">
@@ -13,14 +16,16 @@
     <link rel="stylesheet" href="{{ asset('css/Home.css') }}" media=" ">
     <script class="u-script" type="text/javascript" src="{{ asset('javascript/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ asset('javascript/nicepage.js') }}" defer=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Jockey+One:400|Anybody:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <script type="application/ld+json">{
+    <script type="application/ld+json">
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "Site2"
@@ -217,12 +222,9 @@
       </div>
     </section>
     <section class="u-clearfix u-white u-section-5" id="sec-69ec">
-      <img class="u-expanded-width u-image u-image-default u-image-1" src="{{ asset("/images/wp2733000-dark-gray-background-texture.jpg") }}" alt="" data-image-width="1920" data-image-height="1080">
+      <img class="u-expanded-width u-image u-image-default u-image-1" src="{{ asset("/images/wp2733000-dark-gray-background-texture.jpg") }}" alt="" data-image-width="1920" data-image-height="200">
       <p class="u-align-left u-custom-font u-font-arial u-text u-text-white u-text-1">
-        <span style="font-weight: 700;">Follow Us&nbsp;</span>
-        <br>Secure your spot effortlessly! Follow us on social media for real-time updates, exclusive promotions, and hassle-free parking solutions. Your convenience, our commitment 
-      </p><span class="u-file-icon u-icon u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-direction="X"><img src="{{ asset("/images/1384005-99495e7f.png") }}" alt=""></span><span class="u-file-icon u-icon u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="500"></span><span class="u-file-icon u-icon u-text-white u-icon-3" data-animation-name="customAnimationIn" data-animation-duration="2000" data-animation-delay="1000"></span>
-      <p class="u-align-left u-text u-text-2">F</p>
+      
     </section>
     
      
@@ -272,14 +274,33 @@ Philippines&nbsp;<br>
                       <input type="hidden" value="" name="recaptchaResponse">
                       <input type="hidden" name="formServices" value="47a64133-8ba5-244d-2d11-ac6e479d0892">
                     </form>
-                    <img style="width: 700%; /* Adjust the width as needed */
                     
-            height: auto; /* Maintain aspect ratio */
-            position: relative;
-            top: -500px; /* Adjust the top position */ 
-            left: -600px; /* Adjust the left position */" 
-     src="{{ asset("/images/Screenshot2023-12-17115758.png") }}" 
-     alt="Custom Image">
+
+
+
+       
+        <style>
+        /* Adjust the size and position of the map */
+        .map-container {
+            position: absolute;
+            width: 500%; /* Adjust the width as needed */
+            height: 500px; /* Adjust the height as needed */
+            top: -220px; /* Adjust the top margin as needed */
+            left: -650px; /* Adjust the left margin as needed */
+        }
+
+        iframe {
+            width: 25%;
+            height: 108%;
+            border: 2px solid #ccc; /* Optional border for visibility */
+        }
+    </style>
+
+
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.4492986910104!2d120.9971336674465!3d14.516273733174476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ceb04b4234f1%3A0xe2b7d496e61afdf3!2sPark%20&#39;N%20Fly!5e0!3m2!1sen!2sph!4v1705574880499!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
                   </div>
                 </div>
               </div>

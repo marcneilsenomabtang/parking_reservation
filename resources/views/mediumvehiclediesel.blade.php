@@ -542,62 +542,62 @@ p {
 <tbody>
     <tr>
         <td>Car wash</td>
-        <td>₱280.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this, 280)"></td>
+        <td>₱350.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this, 350)"></td>
     </tr>
 
     <tr>
         <td>Vacuum</td>
-        <td>₱210.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,210)"></td>
+        <td>₱280.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,280)"></td>
     </tr>
 
     <tr>
         <td>Engine Wash</td>
+        <td>₱490.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,490)"></td>
+    </tr>
+
+    <tr>
+        <td>Under Chassis Wash</td>
         <td>₱420.00</td>
         <td><input type="checkbox" onclick="toggleSwitch(this,420)"></td>
     </tr>
 
     <tr>
-        <td>Under Chassis Wash</td>
-        <td>₱350.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,350)"></td>
-    </tr>
-
-    <tr>
         <td>Promo Package (1,2,3,4)</td>
-        <td>₱970.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,970)"></td>
+        <td>₱1150.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,1150)"></td>
     </tr>
 
     <tr>
         <td>Engine Detailing</td>
-        <td>₱1,150.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,1150.00)"></td>
+        <td>₱1,800.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,1800.00)"></td>
     </tr>
 
     <tr>
         <td>Exterior Detailing</td>
-        <td>₱5,150.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,5150.00)"></td>
+        <td>₱5,950.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,5950.00)"></td>
     </tr>
 
     <tr>
         <td>Interior Detailing</td>
-        <td>₱3,050.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,3050.00)"></td>
+        <td>₱3,590.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,3590.00)"></td>
     </tr>
 
     <tr>
         <td>Complete Auto Detailing</td>
-        <td>₱8,150.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,8150.00)"></td>
+        <td>₱9,550.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,9550.00)"></td>
     </tr>
 
     <tr>
         <td>Waxing (Microtex)</td>
-        <td>₱1,180.00</td>
-        <td><input type="checkbox" onclick="toggleSwitch(this,1180.00)"></td>
+        <td>₱1,3580.00</td>
+        <td><input type="checkbox" onclick="toggleSwitch(this,1350.00)"></td>
     </tr>
 </tbody>
         </table>

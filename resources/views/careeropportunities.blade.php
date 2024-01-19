@@ -300,15 +300,7 @@ Name]&nbsp; &nbsp;<br>
         <p class="u-small-text u-text u-text-variant u-text-1"> Copyright © Park 'N Fly. All rights reserved.</p>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="{{ url("html5-template") }}" target="_blank">
-        <span>HTML5 Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="{{ url("html-website-builder") }}" target="_blank">
-        <span>HTML Builder</span>
-      </a>. 
-    </section>
+
+</body></html>
   
 </body></html>
