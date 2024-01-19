@@ -225,7 +225,7 @@ body::before {
         cursor: pointer;
         border-radius: 5px;
         width: 18%; /* Adjust the width value for adjustable buttons */
-        top: 100px; /* Adjust the top value for the Flushing button */
+        top: 130px; /* Adjust the top value for the Flushing button */
         left: -320px;
     }
 
@@ -265,36 +265,36 @@ body::before {
 
 .regular-oil-button {
         /* ... existing styles ... */
-        top: 120px; /* Adjust the top value for the Regular Oil button */
+        top: 140px; /* Adjust the top value for the Regular Oil button */
         left: -90px; /* Adjust the left value for the Regular Oil button */
     }
 
     .fully-synthetic-button {
         /* ... existing styles ... */
-        top: 120px; /* Adjust the top value for the Fully Synthetic button */
+        top: 140px; /* Adjust the top value for the Fully Synthetic button */
         left: -90px; /* Adjust the left value for the Fully Synthetic button */
     }
 
     .regular-button {
         /* ... existing styles ... */
-        top: 220px; /* Adjust the top value for the Regular button */
+        top: 240px; /* Adjust the top value for the Regular button */
         left: -550px; /* Adjust the left value for the Regular button */
     }
 
     .fully-button {
         /* ... existing styles ... */
-        top: 220px; /* Adjust the top value for the Fully button */
+        top: 240px; /* Adjust the top value for the Fully button */
         left: -550px; /* Adjust the left value for the Fully button */
     }
     .reg-button {
         /* ... existing styles ... */
-        top: 240px; /* Adjust the top value for the Regular button */
+        top: 245px; /* Adjust the top value for the Regular button */
         left: -315px; /* Adjust the left value for the Regular button */
     }
 
     .full-button {
         /* ... existing styles ... */
-        top: 240px; /* Adjust the top value for the Fully button */
+        top: 245px; /* Adjust the top value for the Fully button */
         left: -315px; /* Adjust the left value for the Fully button */
     }
 

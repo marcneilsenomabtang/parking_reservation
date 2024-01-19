@@ -102,6 +102,7 @@
         left: 0;
         background-color: #111;
         padding-top: 20px;
+        
         }
 
         .dropdown-btn {
@@ -117,16 +118,21 @@
         cursor: pointer;
         outline: none;
         position: relative;
+        
+        
         }
         .sidenav .dropdown-btn:hover {
         background-color: #b1482e;
         color: white;
+        
     }
 
     /* Sidebar dropdown items hover effect */
     .sidenav .brand-container a:hover {
         background-color: #b1482e;
         color: white;
+      
+       
     }
 
         .dropdown-container.brand-container {
@@ -150,11 +156,14 @@
         .dropdown-container.brand-container a:hover {
         background-color: #555;
         color: #f1f1f1;
+        
         }
 
         /* Adjusted top position for each brand */
         .dropdown-container#Toyota {
         top: -170px;
+        overflow-y: scroll;
+        height: 100vh; /* Set the height to your preference */
         }
 
         .dropdown-container#Honda {
@@ -347,6 +356,7 @@
         <a href="#">Yaris</a>
         <a href="#">Wigo</a>
         <a href="#">Veloz</a>
+        <a href="#">Prado</a>
         <a href="#">Raize</a>
         <a href="#">Rush</a>
         <a href="#">Innova</a>
@@ -572,7 +582,35 @@ document.addEventListener("DOMContentLoaded", function () {
             checkModel();
         });
     });
+confirmButton.addEventListener('click', function () {
+    var selectedModel = label2.value.toLowerCase();
 
+    // Check if the selected model is in the list of specific models
+    var specificModels = ['landcruiser', 'patrol'];
+
+    if (specificModels.includes(selectedModel)) {
+        // Check which button (gasoline or diesel) is selected
+        if (gasolineButton.classList.contains('selected')) {
+            // Redirect to largevehiclegasoline.index for Landcruiser and Patrol
+            window.location.href = '{{ route("largevehiclegasoline.index") }}?model=' + selectedModel;
+        } else if (dieselButton.classList.contains('selected')) {
+            // Redirect to largevehiclediesel.index for Landcruiser and Patrol
+            window.location.href = '{{ route("largevehiclediesel.index") }}?model=' + selectedModel;
+        } else {
+            // If neither gasoline nor diesel is selected, hide the buttons
+            gasolineButton.style.display = 'none';
+            dieselButton.style.display = 'none';
+            gasolineButton1.style.display = 'none'; // Added for Adventure
+            dieselButton1.style.display = 'none'; // Added for Adventure
+        }
+    } else {
+        // For other models, hide the buttons
+        gasolineButton.style.display = 'none';
+        dieselButton.style.display = 'none';
+        gasolineButton1.style.display = 'none'; // Added for Adventure
+        dieselButton1.style.display = 'none'; // Added for Adventure
+    }
+});
     confirmButton.addEventListener('click', function () {
         var selectedModel = label2.value.toLowerCase();
         if (selectedModel === 'innova' || selectedModel === 'accent' || selectedModel === 'adventure' || selectedModel === 'patrol' || selectedModel === 'landcruiser') {
@@ -609,7 +647,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var mediumVehicleDieselModels = [
                 'fortuner 06-15 2016 up', 'fortuner 2016 up', 'fj cruiser', 'hi-lux',
                 'd-max', 'mux', 'sportivo', 'crosswind', 'altera', 'trooper',
-                'navarra', 'x-trail', 'terra',
+                'nava   ra', 'x-trail', 'terra',
                 'montero', 'sports 2016 pajero', 'strada', 'l300 fb',
                 'bt-50',
                 'tucson', 'sta fe',
@@ -618,7 +656,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 'carens', 'carnival'
             ];
             var largeVehicleDieselModels = [
-                'hi-ace commuter', 'gl', 'grandia', 'super grandia', 'prado',
+                'hi-ace commuter', 'gl', 'grandia', 'super grandia',
                 'nv350', 'urvan', 'escapade', 'estate',
                 'starex', 'grand starex','prado'
             ];

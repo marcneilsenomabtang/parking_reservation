@@ -227,7 +227,7 @@ body::before {
         cursor: pointer;
         border-radius: 5px;
         width: 18%; /* Adjust the width value for adjustable buttons */
-        top: 100px; /* Adjust the top value for the Flushing button */
+        top: 130px; /* Adjust the top value for the Flushing button */
         left: -320px;
     }
 
