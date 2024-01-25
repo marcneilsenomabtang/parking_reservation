@@ -54,28 +54,28 @@
 <br>
             <br>
           
-          @csrf
-          <div class="u-custom-font u-text u-text-custom-color-2 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">
-            <div class="form-group">
-                <label>CHECK IN TIME</label>
-                <div class="input-group">
-                    <input autocomplete="off" type="text" required name="check_in" class="form-control dt_picker" placeholder="yyyy-mm-dd">
-                    <span class="input-group-addon"><i class='bx bxs-chevron-down'></i>	</span>                    
-                </div>                
-            </div>
-            <div class="form-group">
-                <label>CHECK OUT TIME</label>
-                <div class="input-group">
-                    <input autocomplete="off" type="text" required name="check_out" class="form-control dt_picker" placeholder="yyyy-mm-dd">
-                    <span class="input-group-addon"><i class='bx bxs-chevron-down'></i>	</span>                    
-                </div>                
-            </div>
-            <button type="submit" class="u-border-1 u-border-custom-color-2 u-border-hover-black u-btn u-button-style u-hover-feature u-none u-text-custom-color-2 u-text-hover-grey-90 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1750">
-              Check Availability
-            </button>
-          </div>
-          
-          <p class="u-custom-font u-text u-text-custom-color-2 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">BOOK YOUR SPOT NOW!</p>
+        
+</style>
+
+<!-- Your existing HTML code -->
+@csrf
+<div class="u-custom-font u-text u-text-custom-color-2 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">
+    <div class="form-group">
+       
+    </div>
+    <div class="form-group">
+      
+        <div class="input-group">
+           
+           
+        </div>
+    </div>
+    <button type="submit" class="u-border-1 u-border-custom-color-2 u-border-hover-black u-btn u-button-style u-hover-feature u-none u-text-custom-color-2 u-text-hover-grey-90 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1750">
+    BOOK YOUR SPOT NOW!
+    </button>
+</div>
+
+<p class="u-custom-font u-text u-text-custom-color-2 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction=""></p>
           <p class="u-custom-font u-text u-text-white u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-direction="">Park 'N Fly is the first of its kind and only service in the Philippines wherein customers can leave their vehicles on a daily, weekly or monthly basis either for short-term or long-term parking at very reasonable rates. </p>
           
           
